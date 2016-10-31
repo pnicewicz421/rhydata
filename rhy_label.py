@@ -44,7 +44,7 @@ clientrhy4['issop'].replace(1, 'SOP', inplace=True)
 #Concatenate the five project type columns into one program column. There is an easier 
 #way to do it in pandas using the concat function, but for some reason, this function cut
 #a number of records out, where there were two project types.
-clientrhy4['program'] = Series(np.where(pd.isnull(clientrhy4['isbcpes']),clientrhy4['isbcpp'],clientrhy4['isbces']))
+clientrhy4['program'] = Series(np.where(pd.isnull(clientrhy4['isbcpes']),clientrhy4['isbcpp'],clientrhy4['isbcpes']))
 clientrhy4['program'] = Series(np.where(pd.isnull(clientrhy4['program']),clientrhy4['istlp'],clientrhy4['program']))
 clientrhy4['program'] = Series(np.where(pd.isnull(clientrhy4['program']),clientrhy4['ismgh'],clientrhy4['program']))
 clientrhy4['program'] = Series(np.where(pd.isnull(clientrhy4['program']),clientrhy4['issop'],clientrhy4['program']))
